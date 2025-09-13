@@ -5,17 +5,21 @@ on:
   pull_request:
     branches: ["main"]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Clean previous build dir (just in case)
+        run: rm -rf build
+
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
       - name: Build
         run: cmake --build build --config Release -j
+
       - name: Test
-        run: |
-          ctest --test-dir build --output-on-failure -V
-          echo "------ LastTest.log (tail) ------"
-          tail -n 200 build/Testing/Temporary/LastTest.log || true
+        run: ctest --test-dir build --output-on-failure -V
