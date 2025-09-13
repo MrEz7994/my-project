@@ -1,0 +1,4 @@
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/rpn.dir
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/rpn_calculator.dir
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/edit_cache.dir
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/rebuild_cache.dir

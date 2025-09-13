@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.16)
+project(rpn_calculator LANGUAGES CXX)
+project(RPNCalculator)
+set(CMAKE_CXX_STANDARD 11)
+include_directories(include)
+
+add_executable(rpn_calculator
+src/main.cpp
+src/rpn.cpp
+)
+set_target_properties(rpn_calculator PROPERTIES
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+)
