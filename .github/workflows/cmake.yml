@@ -1,22 +1,21 @@
 name: CI
-
 on:
   push:
-    branches: ["**"]  
+    branches: ["main"]
   pull_request:
-    branches: ["**"]
-
+    branches: ["main"]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-
       - name: Build
-       run: cmake --build build --config Release -j
-
+        run: cmake --build build --config Release -j
       - name: Test
-        run: ctest --test-dir build --output-on-failure
+        run: |
+          ctest --test-dir build --output-on-failure -V
+          echo "------ LastTest.log (tail) ------"
+          tail -n 200 build/Testing/Temporary/LastTest.log || true

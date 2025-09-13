@@ -1,0 +1,5 @@
+if(EXISTS "/home/elina/my-project/rpn_calculator/build/rpn_tests[1]_tests.cmake")
+  include("/home/elina/my-project/rpn_calculator/build/rpn_tests[1]_tests.cmake")
+else()
+  add_test(rpn_tests_NOT_BUILT rpn_tests_NOT_BUILT)
+endif()

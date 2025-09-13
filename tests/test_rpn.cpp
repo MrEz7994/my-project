@@ -5,6 +5,7 @@
 TEST(RPNTest, BasicAddition) {
     EXPECT_DOUBLE_EQ(eval_rpn("2 3 +"), 5.0);
 }
+
 TEST(RPNTest, WikipediaExample) {
     EXPECT_DOUBLE_EQ(eval_rpn("15 7 1 1 + - / 3 * 2 1 1 + + -"), 5.0);
 }

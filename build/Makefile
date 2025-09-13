@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/elina/my-project/rpn_calculator/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -142,6 +152,45 @@ rpn_calculator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn_calculator.dir/build.make CMakeFiles/rpn_calculator.dir/build
 .PHONY : rpn_calculator/fast
 
+#=============================================================================
+# Target rules for targets named rpn_tests
+
+# Build rule for target.
+rpn_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpn_tests
+.PHONY : rpn_tests
+
+# fast build rule for target.
+rpn_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn_tests.dir/build.make CMakeFiles/rpn_tests.dir/build
+.PHONY : rpn_tests/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -190,6 +239,30 @@ src/rpn.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn.dir/build.make CMakeFiles/rpn.dir/src/rpn.cpp.s
 .PHONY : src/rpn.cpp.s
 
+tests/test_rpn.o: tests/test_rpn.cpp.o
+.PHONY : tests/test_rpn.o
+
+# target to build an object file
+tests/test_rpn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn_tests.dir/build.make CMakeFiles/rpn_tests.dir/tests/test_rpn.cpp.o
+.PHONY : tests/test_rpn.cpp.o
+
+tests/test_rpn.i: tests/test_rpn.cpp.i
+.PHONY : tests/test_rpn.i
+
+# target to preprocess a source file
+tests/test_rpn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn_tests.dir/build.make CMakeFiles/rpn_tests.dir/tests/test_rpn.cpp.i
+.PHONY : tests/test_rpn.cpp.i
+
+tests/test_rpn.s: tests/test_rpn.cpp.s
+.PHONY : tests/test_rpn.s
+
+# target to generate assembly for a file
+tests/test_rpn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rpn_tests.dir/build.make CMakeFiles/rpn_tests.dir/tests/test_rpn.cpp.s
+.PHONY : tests/test_rpn.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -198,14 +271,21 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... rpn"
 	@echo "... rpn_calculator"
+	@echo "... rpn_tests"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/rpn.o"
 	@echo "... src/rpn.i"
 	@echo "... src/rpn.s"
+	@echo "... tests/test_rpn.o"
+	@echo "... tests/test_rpn.i"
+	@echo "... tests/test_rpn.s"
 .PHONY : help
 
 

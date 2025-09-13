@@ -1,4 +1,14 @@
 /home/elina/my-project/rpn_calculator/build/CMakeFiles/rpn.dir
 /home/elina/my-project/rpn_calculator/build/CMakeFiles/rpn_calculator.dir
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/rpn_tests.dir
+/home/elina/my-project/rpn_calculator/build/CMakeFiles/test.dir
 /home/elina/my-project/rpn_calculator/build/CMakeFiles/edit_cache.dir
 /home/elina/my-project/rpn_calculator/build/CMakeFiles/rebuild_cache.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/CMakeFiles/test.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/CMakeFiles/edit_cache.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/CMakeFiles/rebuild_cache.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/googletest/CMakeFiles/test.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/googletest/CMakeFiles/edit_cache.dir
+/home/elina/my-project/rpn_calculator/build/_deps/googletest-build/googletest/CMakeFiles/rebuild_cache.dir

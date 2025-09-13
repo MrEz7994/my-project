@@ -8,6 +8,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_library(rpn src/rpn.cpp)
 target_include_directories(rpn PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
+add_executable(rpn_calculator src/main.cpp)
+target_link_libraries(rpn_calculator PRIVATE rpn)
+
 include(FetchContent)
 set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
@@ -22,6 +25,5 @@ enable_testing()
 add_executable(rpn_tests tests/test_rpn.cpp)
 target_link_libraries(rpn_tests PRIVATE rpn GTest::gtest_main)
 target_include_directories(rpn_tests PRIVATE ${CMAKE_SOURCE_DIR}/include)
-
 include(GoogleTest)
 gtest_discover_tests(rpn_tests)
